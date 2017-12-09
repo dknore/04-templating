@@ -4,8 +4,7 @@ let articleView = {};
 
 // TODONE: Where possible, refactor methods into arrow functions, including the document.ready() method at the bottom.
 
-// COMMENT: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
-// PUT YOUR RESPONSE HERE
+// COMMENTED: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 //RESPONSE:  If there  was an if tag, the parent above cannot be an arrow function as this is referring to and instance and arrow functions do not state what ".this" is.
 
 articleView.populateFilters = () => {
