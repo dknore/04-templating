@@ -7,6 +7,37 @@ let articleView = {};
 // COMMENTED: How do arrow functions affect the context of "this"? How did you determine if a function could be refactored?
 //RESPONSE:  If there  was an if tag, the parent above cannot be an arrow function as this is referring to and instance and arrow functions do not state what ".this" is.
 
+let filterTypesObj = [{
+  type: 'author',
+  name: 'Authors'
+},
+{
+  type: 'category',
+  name: 'Categories'}
+];
+
+let filterType = [];
+
+function Filter (rawDataObject) {
+  for (let key in rawDataObject) {
+    this[key] = rawDataObject[key];
+  }
+}
+
+Filter.prototype.toHtml = function() {
+  let filterTemplate = $('#filters-template').html();
+  let filterRender = Handlebars.compile(filterTemplate);
+  return filterRender(this);
+};
+
+filterTypesObj.forEach(filterObject => {
+  filterType.push(new Filter(filterObject));
+});
+
+filterType.forEach(Filter => {
+  $('#filters').append(Filter.toHtml());
+});
+
 articleView.populateFilters = () => {
   $('article').each(function() {
     if (!$(this).hasClass('template')) {
