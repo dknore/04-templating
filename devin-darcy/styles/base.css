@@ -1,5 +1,6 @@
 img {
   max-width: 100%;
+  margin: 1.5em;
 }
 
 body {
@@ -14,7 +15,7 @@ main {
 
 hr {
   margin: 1em;
-  width: 80%;
+  width: 100%;
 }
 
 /*TEXT STYLES
