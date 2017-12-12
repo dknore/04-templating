@@ -27,13 +27,13 @@
       this.publishedOn = rawDataObj.publishedOn;
     } -->
     <script id="article-template" type="text/x-handlebars-template">
-      <article data-category="{{category}}" data-author="{{author}}">
+      <article data-author="{{author}}" data-category="{{category}}">
         <header>
-        <h1>{{title}}</h1>
-        <div class="byline">By <address> <a href="{{authorUrl}}">{{author}}</a></address> {{publishStatus}}
-      </div>
-      </header>
-        {{{body}}}
+          <h1>{{Title}}</h1>
+          <div class="byline">By <address> <a href="{{authorUrl}}">{{author}}</a></address> {{publishStatus}}</div>
+        </header>
+        <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
         <hr>
       </article>
     </script>
